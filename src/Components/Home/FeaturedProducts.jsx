@@ -11,19 +11,25 @@ function FeaturedProducts() {
 
   // const apiUrl = import.meta.env.VITE_API_BASEURL;
 
-
-
   useEffect(()=>{
     setCategories(Categories);
   },[])  
 
 
   useEffect(()=>{
+    if(currentCategory == 'all'){
       setData(()=>{
         return ProductsData.slice(0,ProductsLimit);
       });
-  },[ProductsLimit])
-
+    }
+    else{
+       setData(()=>{
+          return ProductsData.filter((item)=>{
+            return item.category == currentCategory;
+          })
+       });
+    }
+  },[ProductsLimit,currentCategory])
 
   return (
         <section className="text-gray-600 body-font pt-20">
