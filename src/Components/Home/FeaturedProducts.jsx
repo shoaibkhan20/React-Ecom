@@ -9,12 +9,9 @@ function FeaturedProducts() {
   const [ProductsLimit,setLimit] = useState(6);
   const [currentCategory,setCategory] = useState('all') // for category wise data getting
 
-  // const apiUrl = import.meta.env.VITE_API_BASEURL;
-
   useEffect(()=>{
     setCategories(Categories);
   },[])  
-
 
   useEffect(()=>{
     if(currentCategory == 'all'){
@@ -33,7 +30,6 @@ function FeaturedProducts() {
 
   return (
         <section className="text-gray-600 body-font pt-20">
-
           <h1 className='font-extrabold text-center text-3xl my-2'>FEATURED PRODUCTS</h1> 
           <hr className="h-1 w-14 mx-auto my-4 border-0 bg-yellow-700"></hr>
           <p className="text-center text-sm uppercase">Recently Added Items</p> 
@@ -83,7 +79,7 @@ function FeaturedProducts() {
               >Load More</button>
             </div>
             </div>
-            
+
           </div>
         </section>
   )

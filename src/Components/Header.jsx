@@ -9,6 +9,8 @@ import { Link } from 'react-router-dom';
 
 export default function Header() {
   const [menuToggle, setToggle] = useState(false);
+  const [CartToggle,setCartToggle] = useState(false);
+
   function ToggleMenu(){
     setToggle(!menuToggle);
   }
@@ -30,7 +32,7 @@ export default function Header() {
       'url':'/Signup'
     }
   ]
-  
+  console.log(CartToggle)
   return (
     <>
       <div className="w-[100%] h-[70px] bg-[#ffffff] sticky top-0 flex justify-between items-center md:px-20 border z-10">
@@ -78,11 +80,12 @@ export default function Header() {
               src={cartIcon}
               alt="Cart Icon"
               className="w-[25px] h-[auto] mx-2"
+              onClick={()=>{setCartToggle(!CartToggle)}}
             />
 
             {
               menuToggle ? 
-                  <img
+                <img
                   src={closeicon}
                   alt="close icon"
                   className="sm:hidden w-[30px] h-[auto] mx-2 border p-2 hover:drop-shadow-md"
@@ -133,6 +136,26 @@ export default function Header() {
           })}
         </div>
       </div>
+
+   
+      <aside className={`fixed top-0 right-0 w-[200px] h-full ${CartToggle ? 'mr-0':'mr-[-200px]'}
+          bg-white z-[99999] duration-500 shadow-md
+          flex justify-around items-center flex-col`}>
+        <img
+            src={closeicon}
+            alt="close icon"
+            className="absolute top-5 left-5 w-[30px] h-[auto] mx-2 border p-2 hover:drop-shadow-md"
+            onClick={()=>setCartToggle(!CartToggle)}
+        />
+
+        <ul>
+          <li>item1</li>  
+          <li>item1</li>  
+          <li>item1</li>  
+          <li>item1</li>  
+        </ul>  
+      </aside>   
+    
     </>
   );
 }
