@@ -240,3 +240,11 @@ export var data = [
     }
   }
 ]
+
+
+export var Categories = [
+  "electronics",
+  "jewelery",
+  "men's clothing",
+  "women's clothing"
+]

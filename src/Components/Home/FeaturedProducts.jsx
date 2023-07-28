@@ -1,5 +1,6 @@
 import { useEffect,useState } from "react";
 import { Link } from "react-router-dom";
+import {data as ProductsData,Categories} from "../../data"
 
 function FeaturedProducts() {
 
@@ -7,42 +8,22 @@ function FeaturedProducts() {
   const [categores,setCategories] = useState([]); // categories list
   const [ProductsLimit,setLimit] = useState(6);
   const [currentCategory,setCategory] = useState('all') // for category wise data getting
-  const apiUrl = import.meta.env.VITE_API_BASEURL;
 
-  const options = {
-    method: 'GET',
-  };
-  function GetAllProducts(){ // function for getting all products
-    if(currentCategory == 'all'){
-      fetch(`${apiUrl}/products?limit=${ProductsLimit}`, options)
-      .then(response => response.json())
-      .then(response =>{ 
-          // console.log(response)
-          setData(response)
+  // const apiUrl = import.meta.env.VITE_API_BASEURL;
+
+
+
+  useEffect(()=>{
+    setCategories(Categories);
+  },[])  
+
+
+  useEffect(()=>{
+      setData(()=>{
+        return ProductsData.slice(0,ProductsLimit);
       });
-    }
-    else{
-      fetch(`${apiUrl}/products/category/${currentCategory}`, options)
-        .then(response => response.json())
-        .then(response =>{ 
-            // console.log(response)
-            setData(response)
-        })
-    }
-  }
+  },[ProductsLimit])
 
-  useEffect(()=>{
-    GetAllProducts();
-  },[ProductsLimit,currentCategory])
-  
-  useEffect(()=>{
-    fetch(`${apiUrl}/products/categories`, options)
-        .then(response => response.json())
-        .then(response =>{ 
-            // console.log(response)
-            setCategories(response)
-        })
-  },[])
 
   return (
         <section className="text-gray-600 body-font pt-20">
@@ -88,7 +69,6 @@ function FeaturedProducts() {
                     </div>
                   );
                 })
-
             }
             <div className="btn w-[100%] flex justify-center">
               <button className={`py-3 px-12 bg-yellow-700 text-white rounded-md 
