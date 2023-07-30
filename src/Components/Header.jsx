@@ -11,28 +11,28 @@ export default function Header() {
   const [menuToggle, setToggle] = useState(false);
   const [CartToggle,setCartToggle] = useState(false);
 
+ 
+  const menuItems = [
+  {
+    'item':'Home',
+    'url':'/Home'
+  },
+  {
+    'item':'About',
+    'url':'/About'
+  },
+  {
+    'item':'Contact',
+    'url':'/Contact'
+  },
+  {
+    'item':'Signup',
+    'url':'/Signup'
+  }
+  ]
   function ToggleMenu(){
     setToggle(!menuToggle);
   }
-  const menuItems = [
-    {
-      'item':'Home',
-      'url':'/Home'
-    },
-    {
-      'item':'About',
-      'url':'/About'
-    },
-    {
-      'item':'Contact',
-      'url':'/Contact'
-    },
-    {
-      'item':'Signup',
-      'url':'/Signup'
-    }
-  ]
-  console.log(CartToggle)
   return (
     <>
       <div className="w-[100%] h-[70px] bg-[#ffffff] sticky top-0 flex justify-between items-center md:px-20 border z-10">
@@ -74,12 +74,12 @@ export default function Header() {
             <img
               src={heartIcon}
               alt="Heart Icon"
-              className="hidden md:block w-[20px] h-[auto] ml-5"
+              className="hidden md:block w-[20px] h-[auto] ml-5 cursor-pointer"
             />
             <img
               src={cartIcon}
               alt="Cart Icon"
-              className="w-[25px] h-[auto] mx-2"
+              className="w-[25px] h-[auto] mx-2 cursor-pointer"
               onClick={()=>{setCartToggle(!CartToggle)}}
             />
 
@@ -137,23 +137,33 @@ export default function Header() {
         </div>
       </div>
 
-   
+      {/* Cart Sidebar */}
+
       <aside className={`fixed top-0 right-0 w-[200px] h-full ${CartToggle ? 'mr-0':'mr-[-200px]'}
-          bg-white z-[99999] duration-500 shadow-md
-          flex justify-around items-center flex-col`}>
+          px-4 pt-20 bg-white z-[99999] duration-300 shadow-md
+          flex justify-start items-center flex-col`}>
         <img
             src={closeicon}
             alt="close icon"
-            className="absolute top-5 left-5 w-[30px] h-[auto] mx-2 border p-2 hover:drop-shadow-md"
+            className="absolute top-5 left-5 w-[30px] h-[auto] 
+                       mx-2 border p-2 hover:drop-shadow-md cursor-pointer"
             onClick={()=>setCartToggle(!CartToggle)}
         />
-
-        <ul>
-          <li>item1</li>  
-          <li>item1</li>  
-          <li>item1</li>  
-          <li>item1</li>  
+        
+        <ul> {/* cart products list */}
+          <li className='flex justify-around items-center border-b pb-2 my-6'>
+            <img src={heartIcon} alt="" className='mx-4 w-[30px] h-[30px] object-contain'/>
+            <div>
+              <h4 className='text-sm'>Product Name</h4>
+              <p className='text-[10px] text-blue-500'>Price : 1099</p>
+            </div>
+          </li>    
         </ul>  
+
+
+        <button className='outline-none py-1 px-4 mt-8 rounded-sm border border-yellow-700 text-sm'>
+           View Details 
+        </button>
       </aside>   
     
     </>

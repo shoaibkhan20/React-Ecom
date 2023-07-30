@@ -6,9 +6,10 @@ import App from './App';
 import Home from './Components/Home/Home';
 import About from './Components/About'
 import ProductDetails from './Components/ProductDetails'
-
+import { CartProvider } from './Context/CartContext';
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    <CartProvider>
      <BrowserRouter>
         <Routes>
           <Route element={<App/>}>
@@ -22,5 +23,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           </Route>
         </Routes>
       </BrowserRouter>
+    </CartProvider>
   </React.StrictMode>,
 )
