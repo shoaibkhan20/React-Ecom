@@ -5,9 +5,7 @@ import { UseCartContext } from "../Context/CartContext";
 
 export default function ProductDetails() {
 
-  const { context, AddtoCart } = UseCartContext();
-  console.log(context);
-
+  const {  AddtoCart } = UseCartContext();
  
   const [discriptionTab, setDiscriptionTab] = useState(true); // triggering discription tab
   const [searchParams] = useSearchParams();
