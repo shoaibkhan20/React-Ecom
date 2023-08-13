@@ -5,8 +5,6 @@ In this project i have covered almost every ecommerce website feature.
 
 ## Installation
 
-Install my-project with npm
-
 ```bash
   git clone https://github.com/shoaibkhan20/React-Ecom.git
   
