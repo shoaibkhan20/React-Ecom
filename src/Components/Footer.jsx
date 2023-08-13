@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
-    <section className="bg-stone-50 p-14 h-[400px]">
-      <div className="flex items-start flex-wrap text-gray-800">
+    <section className="bg-stone-50 pb-5 pt-14  px-14 h-full sm:w-full">
+      <div className="sm:flex items-start flex-wrap text-gray-800">
            <div className="flex flex-col flex-1 footer-links-group">
               <h1 className="font-[600] text-[12px] uppercase mb-5">company info</h1>
               <a href="#">About us</a>
@@ -29,11 +29,9 @@ export default function Footer() {
               <input type="text" placeholder="Enter Email" className="bg-transparent outline-none border-b-2"/>  
            </div>
       </div>
-
-
       <div>
-          <footer>
-              
+          <footer className="mt-4 text-sm md:text-md border-t text-center">
+               Copyrights &copy; all rights reserved
           </footer>
       </div>
     </section>

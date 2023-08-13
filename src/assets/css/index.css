@@ -180,3 +180,24 @@ p{
   font-family: 'Poppins', sans-serif;
 
 }
+.cartIcon{
+  position:relative;
+}
+.cartIcon::before{
+  content:'';
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border: 1px solid black;
+  top:-7px ; left:8px;
+  background-color: red;
+}
+.cartTotals-table tr td{
+  padding: 10px 0px;
+  font-size: 13spx;
+}
+
+
+.about-banner{
+  background: url('../images/about_hero.jpg');
+}

@@ -6,11 +6,9 @@ import securedpayment from '../../assets/images/securedpayment.png'
 export default function PoliciesBadge() {
   return (
     <>
-        <section className='px-12 my-20 py-10 bg-stone-50'>
-
-                <div className='flex flex-wrap w-auto'>
-
-                        <div className=' lg:w-1/4 md:w-1/2 w-full flex items-start justify-center'>
+        <section className='w-full px-12 my-20 py-10 bg-stone-50'>
+                <div className='flex justify-center items-center flex-wrap w-auto'>
+                        <div className='lg:w-1/4 md:w-1/2 w-full flex items-start justify-center'>
                             <div>
                               <img src={shipping} alt="icon 24/7" width={25} height={25} className='mx-10'/>
                             </div>
