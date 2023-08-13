@@ -29,7 +29,7 @@ function FeaturedProducts() {
   },[ProductsLimit,currentCategory])
 
   return (
-        <section className="text-gray-600 body-font pt-20 w-full">
+        <section className="text-gray-600 body-font pt-20 w-full" id="featured_products">
           <h1 className='font-extrabold text-center text-lg sm:text-2xl md:text-3xl my-2'>FEATURED PRODUCTS</h1> 
           <hr className="h-1 w-14 mx-auto my-4 border-0 bg-yellow-700"></hr>
           <p className="text-center text-sm uppercase">Recently Added Items</p> 

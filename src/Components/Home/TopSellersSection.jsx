@@ -35,11 +35,6 @@ export default function TopSellersSection() {
           })
         }
         </div>
-
-        <div className='grid place-items-center'>
-          <button className='mt-5 py-2 px-5 border-2 rounded-md border-yellow-700 text-white text-sm bg-yellow-700'> SHOP NOW</button>
-        </div>
-        
     </section>
   )
 }

@@ -93,13 +93,13 @@ export default function ProductDetails() {
             id="size"
             className="mt-6 border-2 py-2 px-2 rounded outline-none"
           >
-            <option value="na" selected hidden>
+            <option value="na" hidden>
               Select Size
             </option>
             <option value="na">N/A</option>
           </select>
-          <Snackbars messege={"Item Added To Cart Successfully"}>
-            <button
+          <Snackbars messege={"Item Added To Cart Successfully"} >
+            <span
               onClick={()=>{
                 AddtoCart(
                   productDetails
@@ -108,7 +108,7 @@ export default function ProductDetails() {
               className=" py-2 px-12 md:px-6 -ml-2 bg-yellow-700 text-white text-[12px] font-[300] hover:bg-yellow-600"
             >
               Add to Cart
-            </button>
+            </span>
           </Snackbars>
           <p className="text-[11px] capitalize">
             <font className="font-bold">Category : </font>

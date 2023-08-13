@@ -1,3 +1,5 @@
+// call api for getting products here and data must be stored in array named 'data' //
+
 export var data = [
   {
     "id": 1,
@@ -241,6 +243,7 @@ export var data = [
   }
 ]
 
+// array for storing all product categories categories //
 
 export var Categories = [
   "electronics",

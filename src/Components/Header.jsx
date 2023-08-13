@@ -134,7 +134,7 @@ export default function Header() {
           {menuItems.map((item,index) => {
             return (
                 <Link
-                  key={item.item}
+                  key={index}
                   to={item.url}
                   className="family-poppins text-[13px] font-[800] mx-3 py-3 border-y w-[90%]"
                   onClick={()=>setToggle(false)}

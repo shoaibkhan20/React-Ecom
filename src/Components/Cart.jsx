@@ -61,7 +61,7 @@ export default function Cart() {
                             className="object-contain w-[40px]"
                           />
                         </td>
-                        <td className="truncate md:  px-6 py-4 font-semibold text-gray-900 dark:text-white">
+                        <td className="truncate md:whitespace-normal  px-6 py-4 font-semibold text-gray-900 dark:text-white">
                           <Link to={`/product/${CartProduct.id}/?name=${CartProduct.name}`}>
                             {CartProduct.name}
                           </Link>
